@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as firebase from 'firebase';
+import * as firebase from 'firebase'
 
 // import Comment from '../component'
 
