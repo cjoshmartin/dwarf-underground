@@ -7,6 +7,10 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
   * About
   * Login
 */
+
+import App from '../App'
+import {Home, About, Login} from '../views'
+
 import { Database } from '../component'
 
 
@@ -20,7 +24,7 @@ export default class AppRouter extends Component {
   render(){
     return(
       <Router history={browserHistory}>
-        <Route exact={true} path='/' compoent={App}
+        <Route exact={true} path='/' component={App}>
 
           <IndexRoute component={Home}/>
           <Route path='/about' component={About}/>

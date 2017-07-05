@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
-import { Header, Post,Advertisement, ClickBait } from '../component'
+import { Post } from '../component'
 
 export default class Home extends Component {
 
   render(){
     return(
-      <main className="expanded row">
+    <div>
       <Post />
-
-      <Advertisement />
-
-      <ClickBait />
-
-      </main>
+    </div>
 
     )
   }
