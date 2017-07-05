@@ -10,9 +10,9 @@ class Header extends Component {
             <img src="http://www.iconninja.com/files/409/4/1006/axe-icon.svg" alt="axe" />
           </div>
           <div className="float-right nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Log in</a>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/login">Log in</a>
           </div>
         </div>
         <div className="headline text-center small-12 columns">
