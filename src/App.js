@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { Header,Footer, Database, Advertisement, ClickBait } from './component'
+import { Header,Footer, Advertisement, ClickBait } from './component'
 
 import { Home } from './views'
 class App extends Component {

@@ -29,7 +29,7 @@ export default class AppRouter extends Component {
           <IndexRoute component={Home}/>
           <Route path='/about' component={About}/>
           <Route path ='/login' component={Login}/>
-
+          {/* <Route path="post/:id" component={ClickBait} /> */}
        </Route>
       </Router>
 
