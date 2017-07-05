@@ -1,7 +1,28 @@
 import React, { Component } from 'react'
 import './Header.css'
-
+import * as firebase from 'firebase';
 class Header extends Component {
+  constructor(props){
+    super(props)
+    this.state ={
+      userState: '<a href="/login">Log in</a>'
+    }
+    this.isUser = this.isUser.bind(this)
+  }
+     componentDidMount(){
+      this.isUser
+    }
+
+  async isUser(){
+      await firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+        this.setState({userState:"<a href="/" onclick={{firebase.auth().signOut()}}> Sign Out </a>"})
+        }
+        else{
+            this.setState({userState:"<a href=\"/login\">Log in</a>"})
+        }
+      })
+    }
   render() {
     return (
       <div className="expanded row header">
@@ -12,7 +33,7 @@ class Header extends Component {
           <div className="float-right nav-links">
             <a href="/">Home</a>
             <a href="/about">About</a>
-            <a href="/login">Log in</a>
+            <span dangerouslySetInnerHTML={{__html: this.state.userState }} />
           </div>
         </div>
         <div className="headline text-center small-12 columns">
