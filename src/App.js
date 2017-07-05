@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Header, Post,Advertisement, ClickBait, Footer, Database } from './component'
 
+import { Header,Footer, Database } from './component'
+
+import { Home } from './views'
 class App extends Component {
   constructor(props){
     super(props);
@@ -11,14 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
-        <main className="expanded row">
-          <Post />
-
-          <Advertisement />
-
-        <ClickBait />
-        </main>
+          {this.props.children || <Home />}
       <Footer />
       </div>
     );
