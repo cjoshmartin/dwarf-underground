@@ -5,7 +5,7 @@ class Header extends Component {
   constructor(props){
     super(props)
     this.state ={
-      userState: '<a href="/login">Log in</a>'
+      userState: '<a href="#/login">Log in</a>'
     }
     this.isUser = this.isUser.bind(this)
   }
@@ -16,10 +16,10 @@ class Header extends Component {
   async isUser(){
       await firebase.auth().onAuthStateChanged(function(user){
         if(user){
-        this.setState({userState:"<a href="/" onclick={{firebase.auth().signOut()}}> Sign Out </a>"})
+        this.setState({userState:"<a href=\"#/\" onclick={{firebase.auth().signOut()}}> Sign Out </a>"})
         }
         else{
-            this.setState({userState:"<a href=\"/login\">Log in</a>"})
+            this.setState({userState:"<a href=\"#/login\">Log in</a>"})
         }
       })
     }
@@ -28,11 +28,11 @@ class Header extends Component {
       <div className="expanded row header">
         <div className="clearfix">
           <div className="float-left logo">
-          <a href="/"> <img src="http://www.iconninja.com/files/409/4/1006/axe-icon.svg" alt="axe" /></a>
+          <a href="#/"> <img src="http://www.iconninja.com/files/409/4/1006/axe-icon.svg" alt="axe" /></a>
           </div>
           <div className="float-right nav-links">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
+            <a href="#/">Home</a>
+            <a href="#/about">About</a>
             <span dangerouslySetInnerHTML={{__html: this.state.userState }} />
           </div>
         </div>

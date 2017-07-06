@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 // import views
 /* TODO: Make these views and Add the App View
@@ -23,7 +23,7 @@ export default class AppRouter extends Component {
 
   render(){
     return(
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         <Route exact={true} path='/' component={App}>
 
           <IndexRoute component={Home}/>
